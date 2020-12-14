@@ -124,5 +124,9 @@
       }
     }
   },
-  "defaultProject": "bank"
+  "defaultProject": "bank",
+  "cli": {
+    "analytics": false,
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
