@@ -28,6 +28,9 @@
               "src/assets"
             ],
             "styles": [
+              "../bank/node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "../bank/node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+              "../bank/node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
               "src/styles.scss"
             ],
             "scripts": []
