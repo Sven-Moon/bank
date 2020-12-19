@@ -1,16 +1,16 @@
 import { createAction, props } from '@ngrx/store';
-import { Account } from 'src/app/models/Account';
+import { Account } from 'src/app/accounts/models/account';
 
 export const loadAccounts = createAction(
-  '[Account] Load Accounts'
+  '[Account Effects ] Load Accounts'
 );
 
 export const loadAccountsSuccess = createAction(
-  '[Account] Load Accounts Success',
+  '[Account Effects ] Load Accounts Success',
   props<{ accounts: Account[] }>()
 );
 
 export const loadAccountsFailure = createAction(
-  '[Account] Load Accounts Failure',
+  '[Account Effects ] Load Accounts Failure',
   props<{ error: any }>()
 );

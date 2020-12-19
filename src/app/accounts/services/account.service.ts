@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Account } from '../models/Account';
+import { Account } from '../models/account';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -22,7 +22,7 @@ export class AccountService {
     .get<Account[]>(this.baseUrl);
   }
 
-  getAccount(accountId: number): Observable<Account> {
+  getAccount(accountId: string): Observable<Account> {
     return this.http
     .get<Account>(this.baseUrl+accountId);
   } 
