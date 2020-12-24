@@ -1,1 +1,44 @@
-<p>account-edit works!</p>
+<div class="row justify-content-center">
+  <div class="col-8 mt-4">
+    <h4>Edit Account</h4>
+
+    <form #f=ngForm (ngSubmit)="onSubmit()">
+      <div class="form-group"> <!--Acount Name -->
+        <label for="accountName">Account Name</label>
+        <input 
+          type="text" name="name" 
+          id="accountName" required 
+          class="form-control" 
+          [(ngModel)]="model.name" placeholder="Name">
+      </div>
+      <div class="mb-3 form-group"> <!--Acount Description -->
+        <label for="accountDescription">Description</label>
+        <textarea 
+          name="description" 
+          id="accountDescription" 
+          class="form-control" placeholder= "Account Description"
+          required [(ngModel)]="model.description">
+        </textarea>
+      </div>
+      <div class="form-group col-md-6"> <!--Balance -->
+        <label for="accountBalance">Balance</label>
+        <input type="text" name="balance" 
+          id="accountBalance" class="form-control"
+          required [(ngModel)]="model.balance"
+          placeholder="Example: $25.00">
+      </div>
+      <button type="submit" [routerLink]="['/account/list']"
+        class="btn btn-primary m-1">
+        <i class="fas fa-arrow-left"></i>
+        Back To List
+      </button>
+      <button type="submit"
+        class="btn btn-warning m-1"
+        [disabled]="f.invalid">
+        <i class="fas fa-edit"></i>
+        Edit Account
+      </button>
+    </form>
+
+  </div>
+</div>

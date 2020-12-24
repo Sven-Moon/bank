@@ -23,11 +23,11 @@ export const initialState: AccountState = adapter.getInitialState({
 export const accountReducer = createReducer(
   initialState,
   // ---- ADD ----
-  on(AccountActions.AddAccountSuccess,
+  on(AccountActions.addAccountSuccess,
     (state, action) => 
       adapter.addOne<AccountState>(action.account, state)
   ),
-  on(AccountActions.AddAccountFailure,
+  on(AccountActions.addAccountFailure,
     (state, action) => ({...state, error: action.error})    
   ),
   // ---- LOAD ----  Accounts[]

@@ -3,8 +3,7 @@ import { Update } from '@ngrx/entity';
 
 import { Account } from '../models/account';
 
-// ---- LOAD ----
-// Accounts
+// ---- LOAD ---- Accounts
 export const loadAccounts = createAction(
   '[Account List Component] Load Accounts'
 );
@@ -18,9 +17,9 @@ export const loadAccountsFailure = createAction(
   '[Account Effect] Load Accounts Failure', 
   props<{ error: any }>()
 );
-//Account
+// ---- LOAD ---- Account
 export const loadAccount = createAction(
-  '[Account Component] Load Account', 
+  '[Account Components] Load Account', 
   props<{ id: string }>()
 );
 
@@ -36,17 +35,17 @@ export const loadAccountFailure = createAction(
 
 
 // ---- ADD ----
-export const AddAccount = createAction(
+export const addAccount = createAction(
   '[Account Add Component] Add Account', 
   props<{ account: Account }>()
 );
 
-export const AddAccountSuccess = createAction(
+export const addAccountSuccess = createAction(
   '[Account Add Effect] Add Account Success', 
   props<{ account: Account }>()
 );
 
-export const AddAccountFailure = createAction(
+export const addAccountFailure = createAction(
   '[Account Add Effect] Add Account Failure', 
   props<{ error: any }>()
 );

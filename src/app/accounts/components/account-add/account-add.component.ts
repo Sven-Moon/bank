@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Account } from '../../models/account';
 import { AccountService } from '../../services/account.service';
 import { addAccount } from '../../store/account.actions';
 import { AccountState } from '../../store/account.reducer';
