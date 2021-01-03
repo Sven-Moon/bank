@@ -7,12 +7,6 @@
       "name": "Car Savings"
     },
     {
-      "id": 3,
-      "balance": 25,
-      "description": "I'm saving for college",
-      "name": "College Savings"
-    },
-    {
       "id": 2,
       "balance": 100,
       "description": "I'm saving for a death ray",
@@ -23,18 +17,6 @@
       "description": "This is an account for keeping my wife happy. ",
       "price": "75",
       "id": 4
-    },
-    {
-      "name": "faea",
-      "description": "faef",
-      "balance": 35,
-      "id": 5
-    },
-    {
-      "name": "vades",
-      "description": "afe",
-      "balance": 32,
-      "id": 6
     }
   ]
 }

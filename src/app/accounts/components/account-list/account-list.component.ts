@@ -36,16 +36,7 @@ export class AccountListComponent implements OnInit {
     this.accounts$ = this.store.pipe(select(selectAccounts));
   }
 
-  deleteAccount(id: number) {
-    const accountObserver = {
-      next: () => {
-        console.log("Account Deleted");
-        this.ngOnInit();
-      },
-      error: err => console.error(err)
-    };
-    this.accountService.deleteAccount(id).subscribe(accountObserver);
+  deleteAccount(id: string) {
+    this.store.dispatch(fromActions.deleteAccount({ id }))
   }
-
-
 }

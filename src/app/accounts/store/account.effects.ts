@@ -46,6 +46,16 @@ export class AccountEffects {
     { dispatch: false }
   );
 
+  deleteAccount$ = createEffect(() => 
+    this.actions$.pipe(
+      ofType(fromAccountActions.deleteAccount),
+      mergeMap(action => 
+        this.accountService.deleteAccount(action.id).pipe(
+          map(() =>fromAccountActions.deleteAccountSuccess({ id: action.id })),
+          catchError(error => 
+            of(fromAccountActions.deleteAccountFailure({ error })))
+        ))    )  );
+
   constructor(
     private actions$: Actions,
     private accountService: AccountService,

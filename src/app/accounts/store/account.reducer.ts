@@ -55,15 +55,12 @@ export const accountReducer = createReducer(
       adapter.updateOne<AccountState>(action.account, state)
   ),
   
-  // ---- OTHER ---- 
-  on(AccountActions.updateAccounts,
-    (state, action) => adapter.updateMany(action.accounts, state)
-  ),
-  on(AccountActions.deleteAccount,
+  // ---- DELETE ----
+  on(AccountActions.deleteAccountSuccess,
     (state, action) => adapter.removeOne(action.id, state)
   ),
-  on(AccountActions.deleteAccounts,
-    (state, action) => adapter.removeMany(action.ids, state)
+  on(AccountActions.deleteAccountFailure,
+    (state, action) => ({...state, error: action.error})
   )
 );
 

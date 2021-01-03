@@ -57,6 +57,24 @@ export const updateAccount = createAction(
 );
 
 
+// ---- DELETE ----
+
+export const deleteAccount = createAction(
+  '[Account Components] Delete Account',
+  props<{ id: string }>()
+);
+
+export const deleteAccountSuccess = createAction(
+  '[Account Effect] Delete Account Success',
+  props<{ id: string }>()
+);
+
+export const deleteAccountFailure = createAction(
+  '[Account Effect] Delete Account Failure',
+  props<{ error: any }>()
+);
+
+
 // ---- OTHER ----
 
 export const addAccounts = createAction(
@@ -67,14 +85,4 @@ export const addAccounts = createAction(
 export const updateAccounts = createAction(
   '[Account/API] Update Accounts',
   props<{ accounts: Update<Account>[] }>()
-);
-
-export const deleteAccount = createAction(
-  '[Account/API] Delete Account',
-  props<{ id: string }>()
-);
-
-export const deleteAccounts = createAction(
-  '[Account/API] Delete Accounts',
-  props<{ ids: string[] }>()
 );

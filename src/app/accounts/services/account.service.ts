@@ -33,7 +33,7 @@ export class AccountService {
       changes);
   }
 
-  deleteAccount(id: number) {
+  deleteAccount(id: string) {
     return this.http
     .delete(this.baseUrl + id);
   }
