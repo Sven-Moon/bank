@@ -38,16 +38,6 @@ export const accountReducer = createReducer(
   on(AccountActions.loadAccountsFailure,
     (state, action) => ({...state, error: action.error})   
   ),
-  // ---- LOAD ----  Account
-  on(AccountActions.loadAccountSuccess,
-    (state, action) => ({
-      ...state,
-      selectedAccount: action.selectedAccount
-    })
-  ),
-  on(AccountActions.loadAccountsFailure,
-    (state, action) => ({...state, error: action.error})   
-  ),
   
   // ---- EDIT ----  
   on(AccountActions.updateAccount,

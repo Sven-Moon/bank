@@ -34,6 +34,18 @@ export class AccountEffects {
           catchError(error =>
             of(fromAccountActions.loadAccountFailure({ error }))
           )        )      )    )  );
+
+  createAccount$ = createEffect(() => 
+    this.actions$.pipe(
+      ofType(fromAccountActions.addAccount),
+        mergeMap(action => 
+        this.accountService.createAccount(action.account).pipe(
+          map(account => fromAccountActions.addAccountSuccess({ account })),
+          catchError(error => 
+            of(fromAccountActions.addAccountFailure({ error })))
+        )),
+      tap(() => this.router.navigate(["/account/list"]))
+    ));
   
   updateAccount = createEffect(() => 
     this.actions$.pipe(
