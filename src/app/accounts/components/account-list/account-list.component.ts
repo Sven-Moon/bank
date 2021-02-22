@@ -6,6 +6,7 @@ import { AccountState, selectAccounts } from '../../store';
 import { AccountService } from '../../services/account.service';
 import { Observable } from 'rxjs';
 import { Account } from '../../models/account';
+import { RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-account-list',
@@ -32,7 +33,7 @@ export class AccountListComponent implements OnInit {
     //   next: accountsObs => {
     //     this.store.dispatch(
     //       fromActions.loadAccountsSuccess({ accounts: accountsObs })
-    //     );        
+    //     );
     //     // this.accounts = accountsObs
     //   },
     //   error: err => {

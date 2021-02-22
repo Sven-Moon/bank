@@ -29,7 +29,7 @@ export const adapter: EntityAdapter<Account> = createEntityAdapter<Account>(
 
 export const initialState = adapter.getInitialState({
     error: undefined
-  });  
+  });
 
 // ------ REDUCER ------
 export const reducers = createReducer(
@@ -37,7 +37,7 @@ export const reducers = createReducer(
   on(loadAccountsSuccess, (state,action) => {
     return adapter.setAll(action.accounts,state);
   }),
-  on(loadAccountsFailure, (state,action) => {
+  on(loadAccountsFailure, (action) => {
     return{ error: action.error    };
   })
 );

@@ -22,9 +22,13 @@ import { AppEffects } from './reducers/app.effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [], 
-    FormsModule, 
+    StoreModule.forRoot(reducers, { metaReducers,
+      runtimeChecks: {
+        strictActionImmutability: true,
+        strictStateImmutability: true
+      } }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    FormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     HttpClientModule,
     RouterModule,
