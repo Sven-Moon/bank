@@ -10,9 +10,10 @@ import { AccountComponent } from './components/account/account.component';
 import { AppComponents } from './components/app-components';
 import { environment } from 'src/environments/environment';
 import { AccountService } from './services/account.service';
-import * as fromAccountState from "./store"
+import * as fromAccountState from "./store/reducers/accounts.reducer"
 import { EffectsModule } from '@ngrx/effects';
 import { AccountsEffects } from './store/effects/accounts.effects';
+import { accountsReducers } from './store/reducers/accounts.reducer';
 
 @NgModule({
   declarations: [
@@ -23,10 +24,10 @@ import { AccountsEffects } from './store/effects/accounts.effects';
     AppRoutingModule,
     StoreModule.forFeature(
       fromAccountState.accountStateFeatureKey,
-      fromAccountState.reducers, 
+      accountsReducers,
       { metaReducers: fromAccountState.metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [], 
-    FormsModule, 
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    FormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     HttpClientModule,
     RouterModule,

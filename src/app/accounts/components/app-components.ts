@@ -4,10 +4,10 @@ import { AccountEditComponent } from './account-edit/account-edit.component';
 import { AccountListComponent } from './account-list/account-list.component';
 import { AccountComponent } from './account/account.component';
 
-export const AppComponents = [ 
+export const AppComponents = [
   AccountComponent,
   AccountAddComponent,
   AccountDetailComponent,
   AccountEditComponent,
-  AccountListComponent  
+  AccountListComponent
 ]

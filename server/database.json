@@ -1,34 +1,28 @@
-{"accounts": [
-  {
-    "accountId":1,
-    "balance":100
-  },
-  {
-    "accountId":2,
-    "balance":101
-  },
-  {
-    "accountId":3,
-    "balance":100
-  },
-  {
-    "accountId":4,
-    "balance":101
-  },
-  {
-    "accountId":1,
-    "balance":100
-  },
-  {
-    "accountId":2,
-    "balance":101
-  },
-  {
-    "accountId":1,
-    "balance":100
-  },
-  {
-    "accountId":2,
-    "balance":101
-  }
-]}
+{
+  "accounts": [
+    {
+      "id": 1,
+      "balance": 100
+    },
+    {
+      "id": 3,
+      "balance": 100
+    },
+    {
+      "id": 9,
+      "balance": 100
+    },
+    {
+      "id": 12,
+      "balance": 101
+    },
+    {
+      "id": 31,
+      "balance": 100
+    },
+    {
+      "id": 62,
+      "balance": 101
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
   <div class="col-8 mt-4">
-      <h4>Products</h4>
+      <h4>accounts</h4>
       <div class="text-right">
           <button type="button"
                   class="btn btn-success"
-                  [routerLink]="['/product/add']">Add New Product <i class="fas fa-plus"></i></button>
+                  [routerLink]="['/accounts/add']">Add New Account <i class="fas fa-plus"></i></button>
       </div>
 
       <div class="row">
@@ -13,7 +13,7 @@
                *ngFor="let account of accounts$ | async">
               <div class="card">
                   <div class="card-body">
-                      <h6 class="card-title">{{account.accountId}}</h6>
+                      <h6 class="card-title">{{account.id}}</h6>
                       <p class="card-text">Balance : ${{account.balance}}</p>
                   </div>
                   <div class="text-center mb-1">
@@ -22,10 +22,10 @@
                            aria-label="Basic example">
                           <button type="button"
                                   class="btn btn-info"
-                                  [routerLink]="['/account/detail', account.id]"><i class="fas fa-search"></i></button>
+                                  [routerLink]="['/accounts/detail', account.id]"><i class="fas fa-search"></i></button>
                           <button type="button"
                                   class="btn btn-warning"
-                                  [routerLink]="['/account/edit', account.id]"><i class="fas fa-edit"></i></button>
+                                  [routerLink]="['/accounts/edit', account.id]"><i class="fas fa-edit"></i></button>
                           <button type="button"
                                   class="btn btn-danger"
                                   (click)="deleteAccount(account.id)"><i class="fas fa-trash"></i></button>

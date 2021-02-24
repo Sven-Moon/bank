@@ -22,20 +22,20 @@ export class AccountService {
     .get<Account[]>(this.baseUrl);
   }
 
-  getAccount(accountId: string): Observable<Account> {
+  getAccount(id: string): Observable<Account> {
     return this.http
-    .get<Account>(this.baseUrl+accountId);
-  } 
+    .get<Account>(this.baseUrl+id);
+  }
 
   editAccount(account: Account): Observable<Account> {
     return this.http
-    .put<Account>(this.baseUrl+account.accountId, 
+    .put<Account>(this.baseUrl+account.id,
       account.balance);
   }
 
-  deleteAccount(accountId: number) {
+  deleteAccount(id: number) {
     return this.http
-    .delete(this.baseUrl + accountId);
+    .delete(this.baseUrl + id);
   }
 
 }

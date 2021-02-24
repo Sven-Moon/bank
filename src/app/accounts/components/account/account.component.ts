@@ -28,7 +28,7 @@ export class AccountComponent implements OnInit {
     const accountsObserver = {
       next: () => {
         console.log("Account Deleted");
-        this.router.navigate(["/account/list"]);
+        this.router.navigate(["/accounts/list"]);
       },
       error: err => console.error(err)
     };

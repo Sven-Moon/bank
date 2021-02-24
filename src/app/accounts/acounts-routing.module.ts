@@ -8,9 +8,9 @@ import { AccountListComponent } from './components/account-list/account-list.com
 import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
-  {path:'get/:accountId', component: AccountComponent},
+  {path:'get/:id', component: AccountComponent},
   {path: 'add', component: AccountAddComponent},
-  {path: 'edit/:accountId', component: AccountEditComponent},
+  {path: 'edit/:id', component: AccountEditComponent},
   {path: 'list', component: AccountListComponent},
   {path: 'details', component: AccountDetailComponent}
 ];

@@ -14,3 +14,16 @@ export const loadAccountsFailure = createAction(
   '[Account Effects ] Load Accounts Failure',
   props<{ error: any }>()
 );
+
+export const deleteAccountSuccess = createAction(
+  '[Account Effects] Delete Account Success');
+
+export const deleteAccountFailure = createAction(
+  '[Account Effects] Delete Account Failure',
+  props<{ error: any }>()
+);
+
+export const deleteAccount = createAction(
+  '[Accounts List] Account Delete',
+  props<{ id: number }>()
+);

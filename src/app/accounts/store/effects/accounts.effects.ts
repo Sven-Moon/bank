@@ -11,21 +11,34 @@ import { mergeMap, map, catchError } from 'rxjs/operators';
 export class AccountsEffects {
 
   constructor(
-    private actions$: Actions, 
+    private actions$: Actions,
     private accountService: AccountService
   ) {}
 
   loadAccounts$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromAccountActions.loadAccounts),
-      mergeMap(() => 
+      mergeMap(() =>
       this.accountService.getAccounts().pipe(
-        map(accounts => fromAccountActions.loadAccountsSuccess({ accounts })), 
-        catchError(error => 
-          of(fromAccountActions.loadAccountsFailure({ error })) 
+        map(accounts => fromAccountActions.loadAccountsSuccess({ accounts })),
+        catchError(error =>
+          of(fromAccountActions.loadAccountsFailure({ error }))
         )
       ))
     )
   )
+
+  deleteAccount$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(fromAccountActions.deleteAccount),
+    mergeMap((action) =>
+    this.accountService.deleteAccount(action.id).pipe(
+      map(() => fromAccountActions.deleteAccountSuccess()),
+      catchError((error) =>
+        of(fromAccountActions.deleteAccountFailure({ error })))
+    ))
+  ))
+
+
 
  }
