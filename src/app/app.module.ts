@@ -3,9 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './accounts/components/app/app.component';
-import { AppComponents } from './accounts/components/app-components';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +12,8 @@ import { RouterModule } from '@angular/router';
 import { AccountsModule } from './accounts/accounts.module';
 import { HomeComponent } from './pages/home/home.component';
 import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './reducers/app.effects';
+import { reducers, metaReducers } from './store';
+import { AppEffects } from './store/effects/app-effects';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent
@@ -33,7 +32,7 @@ import { AppEffects } from './reducers/app.effects';
     HttpClientModule,
     RouterModule,
     AccountsModule,
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot(AppEffects)
   ],
   providers: [],
   bootstrap: [AppComponent]
