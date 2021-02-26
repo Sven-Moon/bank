@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+  <div class="col-8 mt-4"
+       *ngIf="account$ | async as account">
+      <h4>Product Detail</h4>
+      <div class="row mt-4">
+          <div class="col-md-5 col-lg-7">
+              <img class="card-img-top"
+                   src="https://source.unsplash.com/1600x900/?account"
+                   alt="Card image cap">
+              <div class=" mt-4">
+                  <div>
+                      <p>Price: ${{account.id}}</p>
+                  </div>
+                  <div>
+                      <p>
+                          In Stock: {{account.balance}}
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="mt-4">
+          <button class="btn btn-primary"
+                  [routerLink]="['/account/list']"
+                  routerLinkActive="router-link-active"><i class="fas fa-arrow-left"></i> Back To List</button>
+      </div>
+  </div>
+
+</div>
