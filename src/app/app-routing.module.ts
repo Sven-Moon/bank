@@ -1,12 +1,31 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './modules/pages/home/home.component';
+import { AppComponent } from './app/app.component';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
   {
-    path: 'accounts',
-    loadChildren: "../app/accounts/accounts.module#AccountsModule"
+    path:'',
+    component: AppComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./modules/pages/pages.module')
+          .then((m) => m.PagesModule),
+      },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./modules/auth/auth.module')
+          .then((m) => m.AuthModule)
+      },
+      {
+        path: 'accounts',
+        loadChildren: () =>
+          import('./modules/accounts/accounts.module')
+          .then((m) => m.AccountsModule)
+      }
+    ]
   }
 ];
 
