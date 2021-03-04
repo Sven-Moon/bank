@@ -11,7 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AccountsEffects } from 'src/app/store/effects/accounts.effects';
 import { StoreModule } from '@ngrx/store';
 import * as fromAccounts from 'src/app/store/reducers/accounts.reducer'
-import { SharedModule } from '../shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 
 

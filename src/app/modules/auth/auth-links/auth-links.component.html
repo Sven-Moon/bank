@@ -1,1 +1,24 @@
-<p>auth-links works!</p>
+<div class="auth-links">
+  <a [routerLink]="['/admin/accounts-list']"
+    class="auth-admin-link">
+    <i class="fas fa-user-shield"></i>
+    Admin
+  </a>
+  <a [routerLin]k="['/accounts']" class="user-link">
+    <i class="fas fa-user"></i>
+    User
+  </a>
+  <a  class="user-link" (click)="openModal()">
+    <i class="fas fa-sign-in-alt"></i>
+    Login Modal
+  </a>
+  <a [routerLink]="['/auth/login']" class="user-link">
+    <i class="fas fa-sign-in-alt"></i>
+    Login
+  </a>
+  <a  class="auth-logout-link" (click)="logout()">
+    <i class="fas fa-sign-out-alt"></i>
+    Logout
+  </a>
+
+</div>

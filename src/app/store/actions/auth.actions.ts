@@ -3,15 +3,15 @@ import { User } from 'src/app/modules/auth/resources/User';
 
 export const loginPage = createAction(
   '[Login Component] Log in User',
-  props<{ userName: string, password: string }>()
+  props<{ username: string, password: string }>()
 );
 
 export const loginModal = createAction(
   '[Login Component] Log in User',
-  props<{ userName: string, password: string }>()
+  props<{ username: string, password: string }>()
 );
 
-export const loginSuccessful = createAction(
+export const loginSuccess = createAction(
   '[Auth Effects] Login successful',
   props<{ user: User}>()
 );

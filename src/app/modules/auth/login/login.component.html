@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="row bg-light-gray">
+  <div class="login-form mt-5 col-md-8 offset-2 border p-2">
+    <div class="h3">Login</div>
+    <form #f=ngForm (ngSubmit)="onSubmit(f)">
+
+      <div class="form-group">
+        <label for="usernameLogin">Username</label>
+        <input type="text" name="username" id="usernameLogin"
+        placeholder="user or admin" class="form-control"
+        ngModel #username required>
+
+        <label for="passwordLogin">Password</label>
+        <input type="text" name="password" id="passwordLogin"
+        class="form-control" placeholder="anything"
+        autocomplete ngModel #password required>
+      </div>
+
+      <button type="submit" [disabled]=f.invalid class="btn-primary btn-lg">
+        <span>Login <i class="fas fa-sign-in-alt"></i> </span>
+      </button>
+
+    </form>
+  </div>
+</div>
+

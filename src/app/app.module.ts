@@ -15,6 +15,7 @@ import { AppEffects } from './store/effects/app-effects';
 import { SharedComponents } from './shared/shared-components';
 import { AppComponent } from './app/app.component';
 import { AlertModule } from 'ngx-alerts';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AlertModule } from 'ngx-alerts';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     FormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    ModalModule.forRoot(),
 
     AccountsModule,
     HttpClientModule,

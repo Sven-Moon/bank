@@ -24,5 +24,19 @@
       "id": 62,
       "balance": 101
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@admin.com",
+      "isadmin": true
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "email": "user@user.com",
+      "isadmin": false
+    }
   ]
 }
