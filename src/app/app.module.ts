@@ -39,7 +39,7 @@ import { AlertModule } from 'ngx-alerts';
     }),
     RouterModule,
     EffectsModule.forRoot(AppEffects),
-    AppRoutingModule
+    AppRoutingModule // listed AFTER any other modules with routing
   ],
   providers: [],
   bootstrap: [AppComponent]
