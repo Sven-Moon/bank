@@ -8,23 +8,20 @@ import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { AccountsModule } from './modules/accounts/accounts.module';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './store';
 import { AppEffects } from './store/effects/app-effects';
 import { SharedComponents } from './shared/shared-components';
-import { AppComponent } from './app/app.component';
+import { AppComponent } from './shared/app/app.component';
 import { AlertModule } from 'ngx-alerts';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { AuthModule } from './modules/auth/auth.module';
+import { AppModules } from './app-modules';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ...SharedComponents
-  ],
+  declarations: [...SharedComponents ],
   imports: [
-    BrowserModule, // listed AFTER any other modules with routing,
+    BrowserModule,
+    ...AppModules,
     StoreModule.forRoot(reducers, { metaReducers,
       runtimeChecks: {
         strictActionImmutability: true,
@@ -37,11 +34,9 @@ import { AuthModule } from './modules/auth/auth.module';
     AlertModule.forRoot({
       maxMessages: 5, timeout: 5000, positionX: 'right', positionY: 'top'
     }),
-    AccountsModule,
-    HttpClientModule,
-    AuthModule,
-    RouterModule,
     EffectsModule.forRoot(AppEffects),
+    HttpClientModule,
+    RouterModule,
     AppRoutingModule
   ],
   providers: [],

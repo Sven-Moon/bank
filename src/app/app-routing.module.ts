@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app/app.component';
+import { CoreComponent } from './shared/core/core.component';
 
 const routes: Routes = [
   {
     path:'',
-    component: AppComponent,
+    component: CoreComponent,
     children: [
       {
         path: '',

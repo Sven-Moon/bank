@@ -5,9 +5,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
-  declarations: [
-    // PaginationButtonsWidgetComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     NgxSpinnerModule,
