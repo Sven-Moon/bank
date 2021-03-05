@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import * as fromAccounts from 'src/app/store/reducers/accounts.reducer'
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { AccountItemComponent } from './account-item/account-item.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     AccountComponent,
     AccountAddComponent,
     AccountEditComponent,
-    AccountsListComponent
+    AccountsListComponent,
+    AccountItemComponent
   ],
   imports: [
     CommonModule,

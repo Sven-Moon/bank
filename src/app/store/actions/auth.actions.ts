@@ -7,7 +7,7 @@ export const loginPage = createAction(
 );
 
 export const loginModal = createAction(
-  '[Login Component] Log in User',
+  '[Login Component, Modal] Log in User',
   props<{ username: string, password: string }>()
 );
 

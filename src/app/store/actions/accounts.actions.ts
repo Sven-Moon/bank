@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Account } from 'src/app/accounts/models/account';
+import { Account } from 'src/app/modules/accounts/models/account';
 
 export const loadAccounts = createAction(
   '[Account Effects ] Load Accounts'

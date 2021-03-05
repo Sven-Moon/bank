@@ -16,11 +16,17 @@ import { AppComponent } from './shared/app/app.component';
 import { AlertModule } from 'ngx-alerts';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppModules } from './app-modules';
+import { SpinnerEffects } from './store/effects/spinner.effects';
+import { RouteEffects } from './store/effects/route.effects';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AlertEffects } from './store/effects/alert.effects';
+import {BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [...SharedComponents ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ...AppModules,
     StoreModule.forRoot(reducers, { metaReducers,
       runtimeChecks: {
@@ -34,7 +40,12 @@ import { AppModules } from './app-modules';
     AlertModule.forRoot({
       maxMessages: 5, timeout: 5000, positionX: 'right', positionY: 'top'
     }),
-    EffectsModule.forRoot(AppEffects),
+    NgxSpinnerModule,
+    EffectsModule.forRoot([
+      AlertEffects,
+      SpinnerEffects,
+      RouteEffects
+    ]),
     HttpClientModule,
     RouterModule,
     AppRoutingModule

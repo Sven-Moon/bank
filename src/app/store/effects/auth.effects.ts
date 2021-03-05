@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, concatMap } from 'rxjs/operators';
-import { EMPTY, of } from 'rxjs';
+import { of } from 'rxjs';
 
 import * as AuthActions from '../actions/auth.actions';
 import { AuthService } from 'src/app/modules/auth/resources/auth.service';

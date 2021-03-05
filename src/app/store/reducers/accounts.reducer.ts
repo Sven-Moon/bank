@@ -2,7 +2,7 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { createReducer, MetaReducer, on } from '@ngrx/store';
 import { environment } from 'src/environments/environment';
 import { deleteAccount, deleteAccountFailure, loadAccountsFailure, loadAccountsSuccess } from '../actions/accounts.actions';
-import { Account } from 'src/app/accounts/models/account'
+import { Account } from 'src/app/modules/accounts/models/account'
 import { state } from '@angular/animations';
 
 export const accountFeatureKey = "account";
