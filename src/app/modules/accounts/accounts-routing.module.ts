@@ -7,7 +7,7 @@ import { AccountComponent } from './account/account.component';
 import { AccountsListComponent } from './accounts-list/accounts-list.component';
 
 const routes: Routes = [
-  {path:'get/:id', component: AccountComponent},
+  {path: 'get/:id', component: AccountComponent},
   {path: 'add', component: AccountAddComponent},
   {path: 'edit/:id', component: AccountEditComponent},
   {path: 'list', component: AccountsListComponent},

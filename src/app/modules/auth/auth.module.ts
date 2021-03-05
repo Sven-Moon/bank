@@ -13,13 +13,14 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [LoginComponent, AuthLinksComponent, LoginModalComponent],
+  declarations: [LoginComponent, AuthLinksComponent, LoginModalComponent, AuthLinksComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
     EffectsModule.forFeature([AuthEffects]),
     StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.reducer),
     FormsModule
-  ]
+  ],
+  exports: [AuthLinksComponent]
 })
 export class AuthModule { }

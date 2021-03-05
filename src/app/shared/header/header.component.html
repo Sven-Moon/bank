@@ -1,1 +1,41 @@
-<p>header works!</p>
+<div class="header">
+  <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" routerLink="['home']">NGRX</a>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['accounts']">
+              Your Accounts
+            </a>
+          </li>
+          <div class="btn-group" dropdown>
+            <button id="button-basic" dropdownToggle type="button"
+            class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+              Admin <span class="caret"></span>
+            </button>
+            <ul id="dropdown-basic" *dropdownMenu
+            class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="['/accounts/account-list']">Accounts</a>
+            </li>
+            <!-- <li role="menuitem">
+              <a class="dropdown-item" routerLink="['category/list']">
+              Categories</a>
+            </li> -->
+          </ul>
+          <!-- <ul class="navbar-nav">
+            <li class="nav-item">
+              <app-cart-link-widget></app-cart-link-widget>
+            </li>
+          </ul> -->
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

@@ -16,6 +16,7 @@ import { SharedComponents } from './shared/shared-components';
 import { AppComponent } from './app/app.component';
 import { AlertModule } from 'ngx-alerts';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ...SharedComponents
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // listed AFTER any other modules with routing,
     StoreModule.forRoot(reducers, { metaReducers,
       runtimeChecks: {
         strictActionImmutability: true,
@@ -33,15 +34,15 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     ModalModule.forRoot(),
-
-    AccountsModule,
-    HttpClientModule,
     AlertModule.forRoot({
       maxMessages: 5, timeout: 5000, positionX: 'right', positionY: 'top'
     }),
+    AccountsModule,
+    HttpClientModule,
+    AuthModule,
     RouterModule,
     EffectsModule.forRoot(AppEffects),
-    AppRoutingModule // listed AFTER any other modules with routing
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

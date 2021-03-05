@@ -8,19 +8,21 @@
         <div class="form-group">
           <label for="usernameLogin" class="form-control">Username</label>
           <input type="text" name="username" id="usernameLogin"
-          required ngModel #username placeholder="user or admin">
+          required ngModel #username placeholder="user or admin"
+          class="form-control">
         </div>
         <div class="form-group">
           <label for="password" class="form-control">Password</label>
           <input type="text" name="password" id="passwordLogin"
-          required ngModel #password placeholder="whatever">
-      </div>
-      <button type="button" class="btn btn-secondary btn-lg"
-      (click)="cancel()">
-      Cancel <i class="fas fa-arrw-left"></i></button>
-      <button type="submit" [disabled]="f.invalid" (click)=onSubmit(f)
-      class="btn-primary btn-lg"
-      >Login <i class="fas fas-sign-in-alt"></i></button>
+          required ngModel #password placeholder="whatever"
+          class="form-control">
+        </div>
+        <button type="button" class="btn btn-secondary btn-lg"
+        (click)="cancel()">
+          <span>Cancel <i class="fas fa-arrow-left"></i></span></button>
+        <button type="submit" [disabled]="f.invalid" (click)=onSubmit(f)
+        class="btn btn-primary btn-lg"
+        ><span>Login <i class="fas fa-sign-in-alt"></i></span></button>
 
       </form>
     </div>

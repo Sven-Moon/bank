@@ -24,7 +24,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./modules/accounts/accounts.module')
           .then((m) => m.AccountsModule)
-      }
+      },
     ]
   }
 ];

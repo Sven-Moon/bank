@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AccordionModule } from 'ngx-accordion';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
@@ -11,7 +11,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   imports: [
     CommonModule,
     NgxSpinnerModule,
-    AccordionModule,  // uses .forRoot() in tutorial
+    AccordionModule.forRoot(),
     RouterModule,
   ],
   exports: [
